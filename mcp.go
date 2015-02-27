@@ -84,8 +84,8 @@ func move(srcFilename string, file os.FileInfo, err error) error {
                 return err
             }
         }
-
     }
+    
     return nil
 }
 
