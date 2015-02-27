@@ -41,7 +41,7 @@ func main() {
         os.Exit(-1)
     }
 
-        filepath.Walk(srcDir, move)
+    filepath.Walk(srcDir, move)
 
     if verbose {
         fmt.Fprintf(os.Stderr, "Done")
