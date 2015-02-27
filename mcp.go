@@ -61,7 +61,7 @@ func move(srcFilename string, file os.FileInfo, err error) error {
         i := 0
         for {
             i++
-            if _, err := os.Stat(destFilename); err == nil {
+            if _, err = os.Stat(destFilename); err == nil {
                 destFilename = filepath.Join(dstDir, base + "-" + strconv.Itoa(i) + extension)
             } else {
                 break
@@ -81,6 +81,7 @@ func move(srcFilename string, file os.FileInfo, err error) error {
             fmt.Fprintf(os.Stderr, "Removing %s\n", srcFilename)
             if err = os.Remove(srcFilename); err != nil {
                 fmt.Fprintf(os.Stderr, "Error removing %s: %s\n", srcFilename, err)
+                return err
             }
         }
 
@@ -107,11 +108,3 @@ func cp(src string, dst string) error {
     }
     return d.Close()
 }
-
-//func check(error error) bool {
-//    if error != nil {
-//        fmt.Println(error)
-//        return true
-//    }
-//    return false
-//}
