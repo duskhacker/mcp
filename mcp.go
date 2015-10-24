@@ -20,7 +20,7 @@ func init() {
     flag.BoolVar(&delete, "r", false, "Remove Source File")
     flag.StringVar(&srcDir, "s", "", "Source Directory")
     flag.StringVar(&dstDir, "d", "", "Destination Directory")
-    isImage = regexp.MustCompile(`(?i)\.jpg$|\.png$|\.avi$|\.mov$|\.tiff?`)
+    isImage = regexp.MustCompile(`(?i)\.jpg$|\.mp4$|\.png$|\.avi$|\.mov$|\.tiff$`)
 }
 
 func main() {
